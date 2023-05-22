@@ -8,7 +8,7 @@ session_start();
 	if(isset($_POST['ac'])){
 		$servername = "localhost";
 		$username = "root";
-		$password = "";
+		$password = "Malik@03";
 
 		$conn = new mysqli($servername, $username, $password);
 
@@ -16,10 +16,10 @@ session_start();
 		    die("Connection failed: " . $conn->connect_error);
 		} 
 
-		$sql = "USE bookstore";
+		$sql = "USE BookStore";
 		$conn->query($sql);
 
-		$sql = "SELECT * FROM book WHERE BookID = '".$_POST['ac']."'";
+		$sql = "SELECT * FROM Book WHERE BookID = '".$_POST['ac']."'";
 		$result = $conn->query($sql);
 
 		while($row = $result->fetch_assoc()){
@@ -35,7 +35,7 @@ session_start();
 	if(isset($_POST['delc'])){
 		$servername = "localhost";
 		$username = "root";
-		$password = "";
+		$password = "Malik@03";
 
 		$conn = new mysqli($servername, $username, $password);
 
@@ -43,7 +43,7 @@ session_start();
 		    die("Connection failed: " . $conn->connect_error);
 		} 
 
-		$sql = "USE bookstore";
+		$sql = "USE BookStore";
 		$conn->query($sql);
 
 		$sql = "DELETE FROM cart";
@@ -52,7 +52,7 @@ session_start();
 
 	$servername = "localhost";
 	$username = "root";
-	$password = "";
+	$password = "Malik@03";
 
 	$conn = new mysqli($servername, $username, $password);
 
@@ -60,10 +60,10 @@ session_start();
 	    die("Connection failed: " . $conn->connect_error);
 	} 
 
-	$sql = "USE bookstore";
+	$sql = "USE BookStore";
 	$conn->query($sql);	
 
-	$sql = "SELECT * FROM book";
+	$sql = "SELECT * FROM Book";
 	$result = $conn->query($sql);
 ?>	
 
@@ -105,7 +105,7 @@ echo '<blockquote>';
     echo "</tr>";
     echo "</table>";
 
-	$sql = "SELECT book.BookTitle, book.Image, cart.Price, cart.Quantity, cart.TotalPrice FROM book,cart WHERE book.BookID = cart.BookID;";
+	$sql = "SELECT Book.BookTitle, Book.Image, cart.Price, cart.Quantity, cart.TotalPrice FROM Book,cart WHERE Book.BookID = cart.BookID;";
 	$result = $conn->query($sql);
 
     echo "<table style='width:20%; float:right;'>";
