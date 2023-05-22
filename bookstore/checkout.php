@@ -10,9 +10,9 @@
 session_start();
 
 if(isset($_SESSION['id'])){
-	$servername = "localhost";
+	$servername = "192.168.56.102";
 	$username = "root";
-	$password = "";
+	$password = "Malik@03";
 
 	$conn = new mysqli($servername, $username, $password); 
 
@@ -20,7 +20,7 @@ if(isset($_SESSION['id'])){
 	    die("Connection failed: " . $conn->connect_error);
 	} 
 
-	$sql = "USE bookstore";
+	$sql = "USE BookStore";
 	$conn->query($sql);
 
 	$sql = "SELECT CustomerID from customer WHERE UserID = ".$_SESSION['id']."";
@@ -135,9 +135,9 @@ if(isset($_POST['submitButton'])){
 										}else{
 											$address = $_POST['address'];
 
-											$servername = "localhost";
+											$servername = "192.168.56.102";
 											$username = "root";
-											$password = "";
+											$password = "Malik@03";
 
 											$conn = new mysqli($servername, $username, $password); 
 
@@ -305,9 +305,9 @@ if(!isset($_SESSION['id'])){
 }
 
 if(isset($_POST['submitButton'])){
-	$servername = "localhost";
+	$servername = "192.168.56.102";
 	$username = "root";
-	$password = "";
+	$password = "Malik@03";
 
 	$conn = new mysqli($servername, $username, $password); 
 
