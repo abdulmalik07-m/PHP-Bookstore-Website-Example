@@ -6,7 +6,7 @@
 <?php
 session_start();
 	if(isset($_POST['ac'])){
-		$servername = "localhost";
+		$servername = "192.168.56.102";
 		$username = "root";
 		$password = "Malik@03";
 
@@ -23,17 +23,17 @@ session_start();
 		$result = $conn->query($sql);
 
 		while($row = $result->fetch_assoc()){
-			$bookID = $row['BookID'];
+			$BookID = $row['BookID'];
 			$quantity = $_POST['quantity'];
 			$price = $row['Price'];
 		}
 
-		$sql = "INSERT INTO cart(BookID, Quantity, Price, TotalPrice) VALUES('".$bookID."', ".$quantity.", ".$price.", Price * Quantity)";
+		$sql = "INSERT INTO cart(BookID, Quantity, Price, TotalPrice) VALUES('".$BookID."', ".$quantity.", ".$price.", Price * Quantity)";
 		$conn->query($sql);
 	}
 
 	if(isset($_POST['delc'])){
-		$servername = "localhost";
+		$servername = "192.168.56.102";
 		$username = "root";
 		$password = "Malik@03";
 
@@ -50,7 +50,7 @@ session_start();
 		$conn->query($sql);
 	}
 
-	$servername = "localhost";
+	$servername = "192.168.56.102";
 	$username = "root";
 	$password = "Malik@03";
 
