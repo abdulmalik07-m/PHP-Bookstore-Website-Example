@@ -12,9 +12,9 @@ $oEmail;
 $oPhone;
 $oAddress;
 
-$servername = "localhost";
+$servername = "192.168.56.102";
 $username = "root";
-$password = "";
+$password = "Malik@03";
 
 $conn = new mysqli($servername, $username, $password); 
 
@@ -22,7 +22,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
 
-$sql = "USE bookstore";
+$sql = "USE BookStore";
 $conn->query($sql);
 
 $sql = "SELECT users.UserName, users.Password, customer.CustomerName, customer.CustomerIC, customer.CustomerEmail, customer.CustomerPhone, customer.CustomerGender, customer.CustomerAddress
