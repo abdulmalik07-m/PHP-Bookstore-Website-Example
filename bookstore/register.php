@@ -65,9 +65,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 												}else{
 													$address = $_POST['address'];
 
-													$servername = "localhost";
+													$servername = "192.168.56.102";
 													$username = "root";
-													$password = "";
+													$password = "Malik@03";
 
 													$conn = new mysqli($servername, $username, $password); 
 
@@ -75,7 +75,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 													    die("Connection failed: " . $conn->connect_error);
 													} 
 
-													$sql = "USE bookstore";
+													$sql = "USE BookStore";
 													$conn->query($sql);
 
 													$sql = "INSERT INTO users(UserName, Password) VALUES('".$uname."', '".$upassword."')";
